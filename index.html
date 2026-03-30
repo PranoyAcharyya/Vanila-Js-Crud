@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    
+<form id="emp-form">
+        <input type="text" name="name" placeholder="Name" id="name">
+        <input type="number" name="empcode" id="empCode" placeholder="Employee Code">
+        <input type="number" name="salary" id="salary" placeholder="Salary">
+        <input type="email" name="email" placeholder="Email" id="email">
+        <input type="text" name="city" id="city" placeholder="City">
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Employee Code</th>
+                    <th>Salary</th>
+                    <th>Email</th>
+                    <th>City</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+                <!-- Employee rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
