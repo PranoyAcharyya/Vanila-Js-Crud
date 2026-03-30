@@ -48,6 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
               try {
                 await axios.delete(`${baseUrl}/${empid}`);
                 await fetchapi();
+                Toastify({
+                  text: "Deleted successfully",
+                  duration: 3000,
+                  gravity: "top",
+                  position: "right",
+                  style: {
+                    background: "green",
+                  },
+                }).showToast();
               } catch (error) {
                 console.log(error);
 
@@ -82,7 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // store id for update
             editId = id;
-            document.querySelector("button[type='submit']").textContent = editId ? "Update" : "Submit";
+            document.querySelector("button[type='submit']").textContent = editId
+              ? "Update"
+              : "Submit";
           });
         });
       };
@@ -117,8 +128,26 @@ document.addEventListener("DOMContentLoaded", () => {
         if (editId) {
           await axios.put(`${baseUrl}/${editId}`, empobj);
           editId = null;
+          Toastify({
+            text: "Updated successfully",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+              background: "green",
+            },
+          }).showToast();
         } else {
           await axios.post(baseUrl, empobj);
+          Toastify({
+            text: "Saved successfully",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+              background: "green",
+            },
+          }).showToast();
         }
 
         await fetchapi();
@@ -129,6 +158,4 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     postdata();
   });
-
-  
 });
